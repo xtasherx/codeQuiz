@@ -62,12 +62,4 @@ multChoiceOl.addEventListener("click",(event)=>{
 // ------needs to start countdown and display it in nav
 // when a wrong answer is entered subtract time
 // generate a new question each time an answer is chosen
-// ------replace question textContent and button textContent
-// event delegation for the ol containing buttons use event.target to find which choice was made
-// ------track correct/incorrect answer in a a variable and log it to the page
-// after last question create input to add initals
-// display high score
-// ------ navbar should be set to display none at this point
-// ------create li in scoreList ul and add initals and score as text content
-// highest score needs to be in the top li position
-// clear highscores button should clear scoreList Ul
+// ------replace questiols -on should clear scoreList Ul
