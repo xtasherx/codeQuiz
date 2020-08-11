@@ -12,6 +12,7 @@ const multChoiceOl = document.querySelector(".mult-choice");
 const scoreList = document.querySelector(".scoreList")
 const scoreLis = document.querySelector(".score");
 const corrIncor = document.querySelector(".right-wrong");
+const quest = document.querySelector(".question");
 let score = 0;
 // function to show/hide divs
 function hideDivs(div, div1, div2, div3) {
@@ -22,6 +23,17 @@ function hideDivs(div, div1, div2, div3) {
     div3.style.display = "none";
   }
 }
+
+const qAndA = {
+  questions: ["What is your name?","What is your quest?","What is your favorite color?"],
+  answers: ["Tasha", "To find the holy grail.", "Green"]
+};
+
+
+// example to loop through questions in object 
+// qAndA.questions.forEach(element => {
+//   console.log(element);
+// });
 
 // need to access highscores when link in nav is pressed
 highScoreButton.addEventListener("click", () => {
@@ -47,15 +59,21 @@ multChoiceOl.addEventListener("click",(event)=>{
   if (event.target.matches = "button") {
     console.log(event.target.textContent);
   }
-  
 
-  // if (event.target.textContent === answer) {
-  //   corrIncor.textContent = `Correct`;
-  //   score ++;
-  // } else {
-  //   corrIncor.textContent = `Incorrect`;
-  //   subtract time from timer 
-  // }
+  if (event.target.textContent === "Answer 1") {
+    corrIncor.textContent = `Correct`;
+    score ++;
+  } else {
+    corrIncor.textContent = `Incorrect`;
+    // subtract time from timer 
+  }
+
+  // object with array for questions and array for pw's? 
+  // Array.array.forEach(newQuest => {
+  //   question.textContent = newQuest;
+  // });
+
+
 });
 
 

@@ -16,6 +16,10 @@
   max-width: 20%;
   margin: 5px;
 }
+
+ol{
+  margin: 15px;
+}
 /* needs to hide when quiz starts */
 .start-div {
   display: block;
