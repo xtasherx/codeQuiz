@@ -20,3 +20,11 @@
 .question-div {
   display: none;
 }
+/* needs to display when quiz questions are finished or timer runs out  */
+.initials-div {
+  display: none;
+}
+/* needs to display after initials are submitted or when link in navbar is clicked */
+.highscore-div {
+  display: none;
+}

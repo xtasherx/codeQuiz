@@ -1,3 +1,5 @@
+<!-- TO DO:  -->
+<!-- add buttons into an ol  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,7 +34,7 @@
             laboriosam quo qui rerum illo iste et? Veniam laudantium sed ab esse
             repellendus, harum ipsam nobis dolore ducimus impedit rerum natus.
           </h3>
-          <button type="button" class="btn btn-primary btn-sm">
+          <button type="button" class=" start-btn btn btn-primary btn-sm">
             Start Quiz
           </button>
         </div>
@@ -52,6 +54,37 @@
           <h2 class="right-wrong"></h2>
         </div>
       </div>
+    </div>
+
+    <div class="initials-div container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h1>All Done!</h1>
+          <h3 class ="display-score"></h3>Your final score is:</h3>
+          <form>
+            <div class="form-group row">
+              <label for="inputPassword" class="">Enter your initals:</label>
+              <input type="password" class="form-control" id="inputPassword" />
+              <button type="button" class="btn btn-primary btn-sm">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="highscore-div container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <h1>Highscores</h1>
+                <ol class="scoreList">
+
+                </ol>
+                <button type="button" class="go-back btn btn-primary btn-sm">Go Back</button>
+                <button type="button" class="clear-score btn btn-primary btn-sm">Clear Highscores</button>
+            </div>
+        </div>
     </div>
   </body>
 </html>
