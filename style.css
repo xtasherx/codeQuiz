@@ -8,6 +8,10 @@
   margin: 50px auto;
 }
 
+.card-body {
+  margin: 50px;
+}
+
 .btn {
   max-width: 20%;
   margin: 5px;
