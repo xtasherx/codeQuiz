@@ -3,15 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
     <title>Document</title>
   </head>
   <body>
     <!-- navbar for high score and timer -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">View Highscores</a>
+        <p>Time Left:</p>
+      </div>
+    </nav>
     <!-- container div -->
-    <!-- question div -->
-    <!-- multiple choice buttons div -->
-    <!-- hr -->
-    <!-- correct/incorrect -->
+    <div class="start-div container-fluid">
+      <!-- question div -->
+      <div class="card">
+        <div class="card-body">
+          <h1 class="question">Coding Quiz Challenge</h1>
+          <h3>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi
+            laboriosam quo qui rerum illo iste et? Veniam laudantium sed ab esse
+            repellendus, harum ipsam nobis dolore ducimus impedit rerum natus.
+          </h3>
+          <button type="button" class="btn btn-primary btn-sm">
+            Start Quiz
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-div container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="question"></h1>
+          <!-- multiple choice buttons -->
+          <button type="button" class="btn btn-primary btn-sm"></button>
+          <button type="button" class="btn btn-primary btn-sm"></button>
+          <button type="button" class="btn btn-primary btn-sm"></button>
+          <button type="button" class="btn btn-primary btn-sm"></button>
+          <hr />
+          <h2 class="right-wrong"></h2>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

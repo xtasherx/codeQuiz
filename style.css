@@ -1,0 +1,22 @@
+.container-fluid,
+.card,
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.container-fluid {
+  margin: 50px auto;
+}
+
+.btn {
+  max-width: 20%;
+  margin: 5px;
+}
+/* needs to hide when quiz starts */
+.start-div {
+  display: block;
+}
+/* needs to be display block when quiz is started */
+.question-div {
+  display: none;
+}
