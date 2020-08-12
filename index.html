@@ -27,13 +27,13 @@
       <!-- question div -->
       <div class="card">
         <div class="card-body">
-          <h1 class="question">Coding Quiz Challenge</h1>
+          <h1 class="start-h1">Coding Quiz Challenge</h1>
           <h4>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi
             laboriosam quo qui rerum illo iste et? Veniam laudantium sed ab esse
             repellendus, harum ipsam nobis dolore ducimus impedit rerum natus.
           </h4>
-          <button type="button" class=" start-btn btn btn-primary btn-sm">
+          <button type="button" class=" start-btn btn btn-primary btn-sm btn-dark">
             Start Quiz
           </button>
         </div>
@@ -43,24 +43,20 @@
     <div class="question-div container-fluid">
       <div class="card">
         <div class="card-body">
-          <h1 class="question">I'm a random JS question. I'm just a placeholder. Checking that we're doing the thing. _____________ yeah, that thing. </h1>
+          <h1 class="question"></h1>
           <!-- multiple choice buttons -->
-          <ol class="mult-choice">
-              <li>
-                <button type="button" class="btn btn-primary btn-sm">Answer 1</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-primary btn-sm">Answer 2</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-primary btn-sm">Answer 3</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-primary btn-sm">Answer 4 </button>
-              </li>
-          </ol>
+          <div class="mult-choice">
+             
+                <button type="button" class=" ans-btn btn btn-primary btn-sm btn-dark">Answer 1</button>
+        
+                <button type="button" class="ans-btn btn btn-primary btn-sm btn-dark">Answer 2</button>
+        
+                <button type="button" class="ans-btn btn btn-primary btn-sm btn-dark">Answer 3</button>
+     
+                <button type="button" class="ans-btn btn btn-primary btn-sm btn-dark">Answer 4 </button>
+          </div>
           <hr>
-          <h2 class="right-wrong">Correct or Nah</h2>
+          <h2 class="right-wrong"></h2>
         </div>
       </div>
     </div>
@@ -69,12 +65,12 @@
       <div class="card">
         <div class="card-body">
           <h1>All Done!</h1>
-          <h3 class ="display-score"></h3>Your final score is:</h3>
+          <h3 class ="display-score"></h3></h3>
           <form>
             <div class="form-group row">
               <label for="inputPassword" class="">Enter your initals:</label>
-              <input type="password" class="form-control" id="inputPassword" />
-              <button type="button" class="btn btn-primary btn-sm">
+              <input type="text" class="init-input form-control"  />
+              <button type="button" class="init-btn btn btn-primary btn-sm btn-dark">
                 Submit
               </button>
             </div>
@@ -88,10 +84,9 @@
             <div class="card-body">
                 <h1>Highscores</h1>
                 <ol class="scoreList">
-                  <li class="score">Placeholder List</li>
                 </ol>
-                <button type="button" class="go-back btn btn-primary btn-sm">Go Back</button>
-                <button type="button" class="clear-score btn btn-primary btn-sm">Clear Highscores</button>
+                <button type="button" class="go-back btn btn-primary btn-sm btn-dark">Go Back</button>
+                <button type="button" class="clear-score btn btn-primary btn-sm btn-dark">Clear Highscores</button>
             </div>
         </div>
     </div>

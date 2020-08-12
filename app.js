@@ -8,12 +8,15 @@ const startDiv = document.querySelector(".start-div");
 const questDiv = document.querySelector(".question-div");
 const initDiv = document.querySelector(".initials-div");
 const scoreDiv = document.querySelector(".highscore-div");
-const multChoiceOl = document.querySelector(".mult-choice");
-const scoreList = document.querySelector(".scoreList")
+const multChoice = document.querySelector(".mult-choice");
+const scoreList = document.querySelector(".scoreList");
 const scoreLis = document.querySelector(".score");
 const corrIncor = document.querySelector(".right-wrong");
 const quest = document.querySelector(".question");
-let score = 0;
+const ansBtn = document.querySelectorAll(".ans-btn");
+const initButton = document.querySelector(".init-btn");
+const initInput = document.querySelector(".init-input");
+const displayScore = document.querySelector(".display-score");
 // function to show/hide divs
 function hideDivs(div, div1, div2, div3) {
   div.style.display = "block";
@@ -25,15 +28,23 @@ function hideDivs(div, div1, div2, div3) {
 }
 
 const qAndA = {
-  questions: ["What is your name?","What is your quest?","What is your favorite color?"],
-  answers: ["Tasha", "To find the holy grail.", "Green"]
+  questions: [
+    "What is your name?",
+    "What is your quest?",
+    "What is your favorite color?",
+    "What is the air-speed velocity of an Unladen Swallow",
+    "This isn't even a question I just need something.",
+  ],
+  answers0: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  answers1: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  answers2: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  answers3: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  answers4: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  score: 0,
+  timer: 0,
+  counter: 0,
+  questCount: 0,
 };
-
-
-// example to loop through questions in object 
-// qAndA.questions.forEach(element => {
-//   console.log(element);
-// });
 
 // need to access highscores when link in nav is pressed
 highScoreButton.addEventListener("click", () => {
@@ -47,36 +58,51 @@ goBackButton.addEventListener("click", () => {
 // start button
 startBtn.addEventListener("click", () => {
   hideDivs(questDiv, startDiv, initDiv, startDiv);
+  // prep first question and add 1 to questCount
+  quest.innerHTML = `${qAndA.questions[qAndA.questCount]}`;
+  qAndA.questCount++;
 });
-// button to clear high scores 
-clearScoreButton.addEventListener("click", ()=>{
-  scoreLis.textContent = '';
-  // also needs to clear from localStorage 
-})
+// button to clear high scores
+clearScoreButton.addEventListener("click", () => {
+  scoreList.textContent = "";
+  // also needs to clear from localStorage
+});
 
-
-multChoiceOl.addEventListener("click",(event)=>{
-  if (event.target.matches = "button") {
+multChoice.addEventListener("click", (event) => {
+  if ((event.target.matches = "button")) {
     console.log(event.target.textContent);
+    console.log(qAndA.counter);
   }
+  // continue to populate questions as answer buttons are chosen
+  quest.innerHTML = `${qAndA.questions[qAndA.questCount]}`;
+
+  qAndA.questCount++;
 
   if (event.target.textContent === "Answer 1") {
     corrIncor.textContent = `Correct`;
-    score ++;
+    qAndA.score++;
   } else {
     corrIncor.textContent = `Incorrect`;
-    // subtract time from timer 
+    // subtract time from timer
   }
 
-  // object with array for questions and array for pw's? 
-  // Array.array.forEach(newQuest => {
-  //   question.textContent = newQuest;
-  // });
-
-
+  if (qAndA.questCount > 5) {
+    hideDivs(initDiv, startDiv, questDiv, scoreDiv);
+    displayScore.textContent = `Your final score is: ${qAndA.score}`;
+    qAndA.score = 0;
+    qAndA.questCount = 0;
+    corrIncor.textContent = "";
+  }
 });
 
-
+initButton.addEventListener("click", () => {
+  let newScoreSpot = document.createElement("li");
+  newScoreSpot.textContent = initInput.value;
+  scoreList.appendChild(newScoreSpot);
+  hideDivs(scoreDiv, questDiv, initDiv, startDiv);
+  scoreList.style.display = "block";
+  // needs to store the score to rank high scores
+});
 // ------needs to start countdown and display it in nav
 // when a wrong answer is entered subtract time
 // generate a new question each time an answer is chosen

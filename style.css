@@ -1,6 +1,7 @@
 .container-fluid,
 .card,
-.card-body {
+.card-body,
+.mult-choice {
   display: flex;
   flex-direction: column;
 }
@@ -15,9 +16,15 @@
 .btn {
   max-width: 20%;
   margin: 5px;
+  background-color: indianred;
+  border-color: indianred;
 }
 
-ol{
+.btn:onhover {
+  background-color: lightsalmon;
+}
+
+.mult-choice {
   margin: 15px;
 }
 /* needs to hide when quiz starts */
