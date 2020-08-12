@@ -27,6 +27,17 @@ function hideDivs(div, div1, div2, div3) {
   }
 }
 
+function answerGen(count, answers) {
+  if (qAndA.questCount === count) {
+    ansBtn.forEach((button) => {
+      button.textContent = answers[qAndA.counter];
+      qAndA.counter++;
+      // console.log(qAndA.counter);
+    });
+    qAndA.counter = 0;
+  }
+}
+
 const qAndA = {
   questions: [
     "What is your name?",
@@ -36,10 +47,15 @@ const qAndA = {
     "This isn't even a question I just need something.",
   ],
   answers0: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
-  answers1: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
-  answers2: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
-  answers3: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
-  answers4: ["Tasha", "To find the holy grail.", "Green", "placeholder"],
+  answers1: ["your mom", "To find the holy grail.", "Green", "placeholder"],
+  answers2: [
+    "your moms mom",
+    "To find the holy grail.",
+    "Green",
+    "placeholder",
+  ],
+  answers3: ["dude", "To find the holy grail.", "Green", "placeholder"],
+  answers4: ["the dude", "To find the holy grail.", "Green", "placeholder"],
   score: 0,
   timer: 0,
   counter: 0,
@@ -60,6 +76,7 @@ startBtn.addEventListener("click", () => {
   hideDivs(questDiv, startDiv, initDiv, startDiv);
   // prep first question and add 1 to questCount
   quest.innerHTML = `${qAndA.questions[qAndA.questCount]}`;
+  answerGen(0, qAndA.answers0);
   qAndA.questCount++;
 });
 // button to clear high scores
@@ -75,8 +92,12 @@ multChoice.addEventListener("click", (event) => {
   }
   // continue to populate questions as answer buttons are chosen
   quest.innerHTML = `${qAndA.questions[qAndA.questCount]}`;
-
+  answerGen(1, qAndA.answers1);
+  answerGen(2, qAndA.answers2);
+  answerGen(3, qAndA.answers3);
+  answerGen(4, qAndA.answers4);
   qAndA.questCount++;
+  console.log(qAndA.questCount);
 
   if (event.target.textContent === "Answer 1") {
     corrIncor.textContent = `Correct`;
