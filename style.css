@@ -1,3 +1,4 @@
+.container,
 .container-fluid,
 .card,
 .card-body,
@@ -5,9 +6,9 @@
   display: flex;
   flex-direction: column;
 }
-.container-fluid {
+/* .container {
   margin: 50px auto;
-}
+} */
 
 .card-body {
   margin: 50px;

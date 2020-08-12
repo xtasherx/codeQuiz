@@ -1,4 +1,3 @@
-// TO DO:
 // add handles for index.html
 const highScoreButton = document.querySelector(".navbar-brand");
 const goBackButton = document.querySelector(".go-back");
@@ -17,26 +16,6 @@ const ansBtn = document.querySelectorAll(".ans-btn");
 const initButton = document.querySelector(".init-btn");
 const initInput = document.querySelector(".init-input");
 const displayScore = document.querySelector(".display-score");
-// function to show/hide divs
-function hideDivs(div, div1, div2, div3) {
-  div.style.display = "block";
-  if (div.style.display === "block") {
-    div1.style.display = "none";
-    div2.style.display = "none";
-    div3.style.display = "none";
-  }
-}
-
-function answerGen(count, answers) {
-  if (qAndA.questCount === count) {
-    ansBtn.forEach((button) => {
-      button.textContent = answers[qAndA.counter];
-      qAndA.counter++;
-      // console.log(qAndA.counter);
-    });
-    qAndA.counter = 0;
-  }
-}
 
 const qAndA = {
   questions: [
@@ -61,6 +40,33 @@ const qAndA = {
   counter: 0,
   questCount: 0,
 };
+/////////////////////////////////////////////
+/////////////functions//////////////////////
+////////////////////////////////////////////
+
+// function to show/hide divs
+function hideDivs(div, div1, div2, div3) {
+  div.style.display = "block";
+  if (div.style.display === "block") {
+    div1.style.display = "none";
+    div2.style.display = "none";
+    div3.style.display = "none";
+  }
+}
+// pull answer lists from qAndA and display them as button text for each question
+function answerGen(count, answers) {
+  if (qAndA.questCount === count) {
+    ansBtn.forEach((button) => {
+      button.textContent = answers[qAndA.counter];
+      qAndA.counter++;
+      // console.log(qAndA.counter);
+    });
+    qAndA.counter = 0;
+  }
+}
+/////////////////////////////////////////////////////////
+////////////////Event Listeners//////////////////////////
+/////////////////////////////////////////////////////////
 
 // need to access highscores when link in nav is pressed
 highScoreButton.addEventListener("click", () => {
@@ -92,12 +98,15 @@ multChoice.addEventListener("click", (event) => {
   }
   // continue to populate questions as answer buttons are chosen
   quest.innerHTML = `${qAndA.questions[qAndA.questCount]}`;
+  // generate the correct answer choices for each question
   answerGen(1, qAndA.answers1);
   answerGen(2, qAndA.answers2);
   answerGen(3, qAndA.answers3);
   answerGen(4, qAndA.answers4);
+  if (condition) {
+  }
+
   qAndA.questCount++;
-  console.log(qAndA.questCount);
 
   if (event.target.textContent === "Answer 1") {
     corrIncor.textContent = `Correct`;
@@ -106,7 +115,7 @@ multChoice.addEventListener("click", (event) => {
     corrIncor.textContent = `Incorrect`;
     // subtract time from timer
   }
-
+  // all questions have been answered move to initials div
   if (qAndA.questCount > 5) {
     hideDivs(initDiv, startDiv, questDiv, scoreDiv);
     displayScore.textContent = `Your final score is: ${qAndA.score}`;
