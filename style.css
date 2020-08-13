@@ -6,14 +6,26 @@
   display: flex;
   flex-direction: column;
 }
-/* .container {
+.start-div,
+.question-div,
+.initals-div,
+.highscore-div {
   margin: 50px auto;
-} */
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.container-fluid {
+  margin: 50px auto;
+}
 .card-body {
   margin: 50px;
 }
-
+.time-left {
+  color: red;
+}
 .btn {
   max-width: 20%;
   margin: 5px;
@@ -42,5 +54,9 @@
 }
 /* needs to display after initials are submitted or when link in navbar is clicked */
 .highscore-div {
+  display: none;
+}
+
+.timeout-div {
   display: none;
 }
