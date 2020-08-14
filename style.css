@@ -17,6 +17,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+#viewscore {
+  color: white;
+}
 .container-fluid {
   margin: 50px auto;
 }
@@ -24,7 +28,7 @@
   margin: 50px;
 }
 .time-left {
-  color: red;
+  color: indianred;
 }
 .btn {
   max-width: 20%;
@@ -54,9 +58,5 @@
 }
 /* needs to display after initials are submitted or when link in navbar is clicked */
 .highscore-div {
-  display: none;
-}
-
-.timeout-div {
   display: none;
 }
