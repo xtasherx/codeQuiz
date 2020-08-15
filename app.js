@@ -18,35 +18,26 @@ const initButton = document.querySelector(".init-btn");
 const initInput = document.querySelector(".init-input");
 const displayScore = document.querySelector(".display-score");
 const timeLeft = document.querySelector(".time-left");
-
 const qAndA = {
   questions: [
     "What method is used to convert a string into a number?",
     "JavaScript is a ______ typed language?",
-    "What is your favorite color?",
-    "What is the air-speed velocity of an Unladen Swallow",
-    "What is the air-speed velocity of an Unladen Swallow?",
+    "A __________ data type is not an object and has no methods.",
+    "What is the method used to create a random number between 0 and 1?",
+    "A function that is passed into another function as an argument is a __________.",
   ],
-  answers0: [".parseInt()", ".length()", ".toUpperCase", ".toString()"],
+  answers0: [".parseInt()", ".length", ".toUpperCase()", ".toString()"],
   answers1: ["dynamically", "statically", "cryptically", "quickly"],
-  answers2: [
-    "your moms mom",
-    "To find the holy grail.",
-    "Green",
-    "placeholder",
-  ],
-  answers3: ["dude", "To find the holy grail.", "Green", "placeholder"],
-  answers4: [
-    "24 MPH",
-    "African or European?",
-    "I don't even like Monty Python",
-    "I don't know that",
-  ],
+  answers2: ["primitive", "value", "array", "boolean"],
+  answers3: ["Math.random()", ".parseInt()", "Math.ciel()", "Math.floor()"],
+  answers4: ["callback function", "pass function", "variable", "new function"],
   score: 0,
   timer: 0,
   counter: 0,
   questCount: 0,
   secondsLeft: 60,
+  initials: [],
+  scoreWriteOut: [],
 };
 
 /////////////////////////////////////////////
@@ -137,9 +128,12 @@ startBtn.addEventListener("click", () => {
 clearScoreButton.addEventListener("click", () => {
   scoreList.textContent = "";
   localStorage.clear();
+  qAndA.initials = [];
+  qAndA.scoreWriteOut = [];
 });
 
 multChoice.addEventListener("click", (event) => {
+  event.target.classList.remove("active");
   // check for correct answers
   if (qAndA.questCount === 1) {
     goodAnswer(qAndA.answers0[0]);
@@ -167,16 +161,17 @@ multChoice.addEventListener("click", (event) => {
   if (qAndA.questCount > 5) {
     hideDivs(initDiv, startDiv, questDiv, scoreDiv);
     displayScore.textContent = `Your final score is: ${qAndA.score}`;
-    console.log(scoreKeeper);
     qAndA.questCount = 0;
     corrIncor.textContent = "";
   }
 });
-
+let writeOutKeeper = "";
 initButton.addEventListener("click", () => {
   let newScoreSpot = document.createElement("li");
-  newScoreSpot.textContent = `${initInput.value}-${qAndA.score}`;
-  localStorage.setItem(`${initInput.value}-score`, qAndA.score);
+  newScoreSpot.textContent = `${initInput.value}:${qAndA.score}`;
+  localStorage.setItem(`${initInput.value}`, qAndA.score);
+  let currentScore = localStorage.getItem(`${initInput.value}`);
+  console.log(currentScore);
   scoreList.appendChild(newScoreSpot);
   hideDivs(scoreDiv, questDiv, initDiv, startDiv);
   scoreList.style.display = "block";

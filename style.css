@@ -21,6 +21,14 @@
 #viewscore {
   color: white;
 }
+
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  background-color: indianred;
+  border-color: indianred;
+}
+
 .container-fluid {
   margin: 50px auto;
 }
@@ -37,10 +45,9 @@
   border-color: indianred;
 }
 
-.btn:onhover {
-  background-color: lightsalmon;
+li {
+  list-style: none;
 }
-
 .mult-choice {
   margin: 15px;
 }
