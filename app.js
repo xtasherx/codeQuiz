@@ -165,13 +165,11 @@ multChoice.addEventListener("click", (event) => {
     corrIncor.textContent = "";
   }
 });
-let writeOutKeeper = "";
+
 initButton.addEventListener("click", () => {
   let newScoreSpot = document.createElement("li");
   newScoreSpot.textContent = `${initInput.value}: ${qAndA.score}`;
   localStorage.setItem(`${initInput.value}`, qAndA.score);
-  let currentScore = localStorage.getItem(`${initInput.value}`);
-  console.log(currentScore);
   scoreList.appendChild(newScoreSpot);
   hideDivs(scoreDiv, questDiv, initDiv, startDiv);
   scoreList.style.display = "block";
