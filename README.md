@@ -4,4 +4,4 @@ CodeQuiz is a short JavaScript quiz built with JavaScript. It gives the player 6
 
 ## [codeQuiz](https://xtasherx.github.io/codeQuiz/)
 
-![Image alt text](codeQuiz.png)
+![Image alt text](https://github.com/xtasherx/codeQuiz/blob/master/codeQuiz.PNG)
